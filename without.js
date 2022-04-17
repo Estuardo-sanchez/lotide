@@ -1,18 +1,18 @@
 const eqArrays = function(arrayOne, arrayTwo) {
   let sameLength = arrayOne.length === arrayTwo.length;
   let sameValues = true;
-  for(i = 0; i < arrayOne.length; i++) {
-    if(arrayOne[i] !== arrayTwo[i]) {
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
       sameValues = false;
     }
   }
 
-  if(sameValues && sameLength){
-    return true
+  if (sameValues && sameLength) {
+    return true;
   } else {
-    return false
+    return false;
   }
-}
+};
 
 
 const assertArraysEqual = function(actual, expected) {
@@ -26,18 +26,19 @@ const assertArraysEqual = function(actual, expected) {
 
 const without = function(source, itemsToRemove) {
   let newArray = [];
-  for(let item of source) {
-    if(!itemsToRemove.includes(item)) {
+  for (let item of source) {
+    if (!itemsToRemove.includes(item)) {
       newArray.push(item);
     }
   }
-  console.log(newArray);
-}
+  return newArray;
+};
 
 
-console.log(without([1, 2, 3], [1])) // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// console.log(without([1, 2, 3], [1])) // => [2, 3]
+// console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]);
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
+module.exports = without;

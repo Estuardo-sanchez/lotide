@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(letters) {
   let results = {};
-  for (num of letters) {
+  for (let num of letters) {
     if (num === ' ') {
       continue;
     } else {
@@ -16,10 +16,10 @@ const countLetters = function(letters) {
     }
   }
   return results;
-}
+};
 
-console.log(countLetters("my name is Estuardo"));
+//console.log(countLetters("my name is Estuardo"));
 
-
+module.exports = countLetters;
 
 
